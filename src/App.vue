@@ -1,47 +1,38 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
+  import TextComponent from './components/TextComponent.vue'
+ import {ref} from 'vue';
+ const name  = ref('nazmul hossian');
+ const email = ref('hossainnazmul191@gmail.com');
+ </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+      <div class="container mx-auto">
+        <div class="flex items-center mt-5">
+          <img class="logo" src="./assets/logo.svg" alt="Vue logo" />
+          <h1 class="text-2xl">Component Model</h1>
+        </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+        <div class="mt-10">
+          Original Name: {{ name }}<br/>
+          Original email: {{ email }}<br/>
+        </div>
 
-  <main>
-    <TheWelcome />
-  </main>
+        <div class="mt-10">
+          <label>Name</label>
+          <p>
+            <input type="text" v-model="name" /><br><br>
+            <input type="text" v-model="email" />
+          </p>
+        </div>
+        <br><br>
+        <div class="mt-10">
+          <label>Component</label><br />
+          <TextComponent label="Name" v-model="name"/>
+          <TextComponent label="Email" v-model="email"/>
+        </div>
+      </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
