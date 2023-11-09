@@ -1,8 +1,11 @@
 <script setup>
-  import TextComponent from './components/TextComponent.vue'
+  import PersonComponent from './components/PersonComponent.vue'
  import {ref} from 'vue';
- const name  = ref('nazmul hossian');
- const email = ref('hossainnazmul191@gmail.com');
+
+ const person = ref({
+     name:"nazmul hossain",
+     email:"hossiainnazmul191@gmail.com",
+ })
  </script>
 
 <template>
@@ -13,22 +16,21 @@
         </div>
 
         <div class="mt-10">
-          Original Name: {{ name }}<br/>
-          Original email: {{ email }}<br/>
+          Original Name: {{ person.name }}<br/>
+          Original email: {{ person.email }}<br/>
         </div>
 
         <div class="mt-10">
           <label>Name</label>
           <p>
-            <input type="text" v-model="name" /><br><br>
-            <input type="text" v-model="email" />
+            <input type="text" v-model="person.name" /><br><br>
+            <input type="text" v-model="person.email" />
           </p>
         </div>
         <br><br>
         <div class="mt-10">
           <label>Component</label><br />
-          <TextComponent label="Name" v-model="name"/>
-          <TextComponent label="Email" v-model="email"/>
+          <PersonComponent label="Name"  :person="person"/>
         </div>
       </div>
 </template>
