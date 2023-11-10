@@ -1,8 +1,10 @@
 <script setup>
  import TextComponent from './components/TextComponent.vue'
- import {ref} from 'vue';
- const fname = ref('nazmul');
- const lname = ref('hossain');
+ import {reactive} from 'vue';
+ const person = reactive({
+      name:'nazmul hossain'
+ });
+
 </script>
 
 <template>
@@ -13,12 +15,11 @@
         </div>
 
         <div class="mt-10">
-          Original Name: {{ fname }}<br/>
-          Original email: {{ lname }}<br/>
+          Original Name: {{ person.name }}<br/>
         </div><br><br>
 
         <div class="mt-10">
-            <text-component v-model:fname="fname" v-model:lname="lname"/>
+            <text-component v-model="person.name"/>
         </div>
   
     </div>  
