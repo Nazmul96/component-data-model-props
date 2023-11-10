@@ -1,9 +1,7 @@
 <script setup>
- import TextComponent from './components/TextComponent.vue'
- import {reactive} from 'vue';
- const person = reactive({
-      name:'nazmul hossain'
- });
+ import Checkbox from './components/Checkbox.vue'
+ import {ref} from 'vue';
+ const taskDone = ref(false);
 
 </script>
 
@@ -15,11 +13,11 @@
         </div>
 
         <div class="mt-10">
-          Original Name: {{ person.name }}<br/>
+          Task Done: {{ taskDone }}<br/>
         </div><br><br>
 
         <div class="mt-10">
-            <text-component v-model="person.name"/>
+            <Checkbox label="Complete yout task" v-model="taskDone"/>
         </div>
   
     </div>  
