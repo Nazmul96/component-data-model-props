@@ -1,7 +1,7 @@
 <script setup>
- import Checkbox from './components/Checkbox.vue'
+ import Radio from './components/Radio.vue'
  import {ref} from 'vue';
- const taskDone = ref(false);
+ const fruit = ref('banana');
 
 </script>
 
@@ -13,11 +13,14 @@
         </div>
 
         <div class="mt-10">
-          Task Done: {{ taskDone }}<br/>
+          fruit name: {{ fruit }}<br/>
         </div><br><br>
 
         <div class="mt-10">
-            <Checkbox label="Complete yout task" v-model="taskDone"/>
+            <label> Your favorite fruit</label> <br />
+            <Radio v-model="fruit" label="Apple" value="apple"/>
+            <Radio v-model="fruit" label="Banana" value="banana"/>
+            <Radio v-model="fruit" label="Orange" value="orange"/>
         </div>
   
     </div>  
