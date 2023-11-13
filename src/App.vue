@@ -12,7 +12,7 @@
 
         <div class="mt-10">
              <Button>
-                <template v-slot:licon>
+                <template #licon>
                   <svg height="20" viewBox="0 0 128 128" width="20" xmlns="http://www.w3.org/2000/svg" id="fi_4208490">
                   <g>
                     <circle cx="64.001" cy="63.999" fill="#f24646" r="45"></circle>
@@ -20,8 +20,8 @@
                   </g>
                   </svg>
                 </template>  
-                <b>Add Category</b>
-                <template v-slot:ricon>
+                <template #default><b>Add Category</b></template>
+                <template #ricon>
                 <svg height="20" viewBox="0 0 128 128" width="20" xmlns="http://www.w3.org/2000/svg" id="fi_4208490">
                 <g>
                   <circle cx="64.001" cy="63.999" fill="#f24646" r="45"></circle>
