@@ -1,11 +1,7 @@
 <script setup>
     import ComponentA from './components/ComponentA.vue';
-    import {reactive,provide} from 'vue';
-    const person = reactive({
-                      name: 'Vue 3',
-                      price: 299,
-                    });
-    provide('person',person)
+    import {person} from './store/data.js';
+
  </script>
 
 <template>

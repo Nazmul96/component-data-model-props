@@ -1,8 +1,7 @@
 <script setup>
     import ComponentB from './ComponentB.vue'
-    import {inject} from 'vue';
-    // const props = defineProps(['person']);
-    const person = inject('person');
+    import {person} from '../store/data.js';
+
 </script>
 <template>
     <h2>Component A</h2>
