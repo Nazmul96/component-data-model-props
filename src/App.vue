@@ -1,11 +1,11 @@
 <script setup>
-  import PersonComponent from './components/PersonComponent.vue'
- import {ref} from 'vue';
-
- const person = ref({
-     name:"nazmul hossain",
-     email:"hossiainnazmul191@gmail.com",
- })
+    import ComponentA from './components/ComponentA.vue';
+    import {reactive,provide} from 'vue';
+    const person = reactive({
+                      name: 'Vue 3',
+                      price: 299,
+                    });
+    provide('person',person)
  </script>
 
 <template>
@@ -17,21 +17,12 @@
 
         <div class="mt-10">
           Original Name: {{ person.name }}<br/>
-          Original email: {{ person.email }}<br/>
         </div>
 
         <div class="mt-10">
-          <label>Name</label>
-          <p>
-            <input type="text" v-model="person.name" /><br><br>
-            <input type="text" v-model="person.email" />
-          </p>
+            <ComponentA />
         </div>
-        <br><br>
-        <div class="mt-10">
-          <label>Component</label><br />
-          <PersonComponent label="Name"  :person="person"/>
-        </div>
+
       </div>
 </template>
 
